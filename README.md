@@ -1,6 +1,6 @@
 # Esports Trajectories & Actions (ESTA)
 
-[![Discord](https://img.shields.io/discord/868146581419999232?color=blue&label=Discord&logo=discord)](https://discord.gg/W34XjsSs2H) ![GitHub repo size](https://img.shields.io/github/repo-size/pnxenopoulos/esta) ![GitHub demo count](https://img.shields.io/badge/demos-1585-critical) [![awpy](https://img.shields.io/badge/made%20with-awpy-blueviolet)](https://github.com/pnxenopoulos/awpy) [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY-lightgrey)](https://creativecommons.org/licenses/by/4.0/)
+[![Discord](https://img.shields.io/discord/868146581419999232?color=blue&label=Discord&logo=discord)](https://discord.gg/W34XjsSs2H) ![GitHub repo size](https://img.shields.io/github/repo-size/pnxenopoulos/esta) ![GitHub demo count](https://img.shields.io/badge/demos-1558-critical) [![awpy](https://img.shields.io/badge/made%20with-awpy-blueviolet)](https://github.com/pnxenopoulos/awpy) [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY-SA-lightgrey)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Esports Trajectories and Actions (ESTA) is a large dataset of parsed Counter-Strike: Global Offensive (CSGO) demos which contain rich player action and location information. Each parsed demo:
 
