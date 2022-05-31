@@ -1,6 +1,6 @@
 # Esports Trajectories & Actions (ESTA)
 
-[![Discord](https://img.shields.io/discord/868146581419999232?color=blue&label=Discord&logo=discord)](https://discord.gg/W34XjsSs2H) ![GitHub repo size](https://img.shields.io/github/repo-size/pnxenopoulos/esta) ![GitHub demo count](https://img.shields.io/badge/demos-1585-critical) [![awpy](https://img.shields.io/badge/made%20with-awpy-blueviolet)](https://github.com/pnxenopoulos/awpy) [![CC BY 4.0](https://img.shields.io/badge/license-CC%20BY-lightgrey)](https://creativecommons.org/licenses/by/4.0/)
+[![Discord](https://img.shields.io/discord/868146581419999232?color=blue&label=Discord&logo=discord)](https://discord.gg/W34XjsSs2H) ![GitHub repo size](https://img.shields.io/github/repo-size/pnxenopoulos/esta) ![GitHub demo count](https://img.shields.io/badge/demos-1585-critical) [![awpy](https://img.shields.io/badge/made%20with-awpy-blueviolet)](https://github.com/pnxenopoulos/awpy) [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY-lightgrey)](https://creativecommons.org/licenses/by/4.0/)
 
 Esports Trajectories and Actions (ESTA) is a large dataset of parsed Counter-Strike: Global Offensive (CSGO) demos which contain rich player action and location information. Each parsed demo:
 
@@ -15,9 +15,9 @@ The ESTA dataset is comprised of the "Online" (`data/online/`) and the "LAN" (`d
     
 |  **Data** | **Demos** | **Rounds** | **Actions** | **Frames** | **Size** |
 |:---------:|:---------:|:----------:|:-----------:|:----------:|:--------:|
-|  _Online_ |    896    |   23,444   |     4.7m    |    4.4m    |   2.2G   |
-|   _LAN_   |    689    |   18,338   |     3.9m    |    3.5m    |   1.7G   |
-| **Total** |   1,585   |   41,782   |     8.6m    |    7.9m    |   3.9G   |  
+|  _Online_ |    878    |   23,444   |     4.7m    |    4.4m    |   2.2G   |
+|   _LAN_   |    680    |   18,338   |     3.9m    |    3.5m    |   1.7G   |
+| **Total** |   1,558   |   41,782   |     8.6m    |    7.9m    |   3.9G   |  
     
 ## Usage
 You can decompress a parsed demo by running 
