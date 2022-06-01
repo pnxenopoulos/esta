@@ -12,6 +12,8 @@ Esports Trajectories and Actions (ESTA) is a large dataset of parsed Counter-Str
 To see the structure of the JSON, visit the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). You may also join the awpy [Discord](https://discord.gg/W34XjsSs2H) for more discussion and help with working with CSGO demofiles. If you run into issues with the dataset, feel free to ask on the Discord or open an [issue](https://github.com/pnxenopoulos/esta/issues).
 
 The ESTA dataset is comprised of the "Online" (`data/online/`) and the "LAN" (`data/lan/`) subsets. "Online" contains 896 demos from top Online tournaments between January 2021 and May 2022. "Lan" contains 689 demos from top LAN tournaments between July 2021 and May 2022. The list of matches for each was compiled using [HLTV.org](https://www.hltv.org/). Visit HLTV to access a comprehensive list of tournaments and matches, along with their corresponding statistics and demos.
+
+The ESTA data is non-exhaustive, and may lack some demos from the stated time frame or tournaments. For this reason, we do not recommend using ESTA to calculate player statistics (e.g., kills, ADR, etc.) for the time frame stated above. Instead, we recommend visiting HLTV to use their aggregation and statistics tools.
     
 |  **Data** | **Demos** | **Rounds** | **Actions** | **Frames** | **Size** |
 |:---------:|:---------:|:----------:|:-----------:|:----------:|:--------:|
