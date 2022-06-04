@@ -21,6 +21,8 @@ The ESTA data is non-exhaustive, and may lack some demos from the stated time fr
 |   _LAN_   |    680    |   18,338   |     3.9m    |    3.5m    |   1.7G   |
 | **Total** |   1,558   |   41,782   |     8.6m    |    7.9m    |   3.9G   |  
     
+ESTA has a variety of uses. For example, we use ESTA for win probability prediction, which we provide benchmarks for at the end of this README. ESTA may also prove useful for other prediction tasks such as trajectory prediction or unsupervised strategy identification. Outside of machine learning, ESTA may be useful for visualization, completing a class project or thesis, and for practicing data science.
+
 ## Usage
 You can decompress a parsed demo by running 
 
@@ -164,3 +166,6 @@ Each parsed JSON contains demo metadata (such as the map, tick rate, what compet
         "bombsite": ""
 }
 ```
+
+## Benchmarks
+We provide benchmarks for win probability prediction using the ESTA data. The benchmarks are available on [Google Colab](https://colab.research.google.com/drive/1Oqgr4LT3d9pCW4vj4isyR1AfNGtY50sF?usp=sharing). In the benchmarks, we compare gradient boosted tree (LightGBM, XGboost) with set learning methods, like Deep Sets and Set Transformers.
