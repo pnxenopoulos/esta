@@ -38,6 +38,8 @@ If you want to check out what a parsed demo looks like, we recommend using the G
 ## Example Data
 Each parsed JSON contains demo metadata (such as the map, tick rate, what competition it is from, etc.), parser parameters used from awpy, the game server parameters, and a list of game rounds. In each game round, there exists round metadata (score, end reason, teams, etc.), along with six actions (kills, damages, bomb events, grenade throws, weapon fires and flashes), as well as a list of game frames, which are effectively game snapshots containing player information. We show an example of kill and frame output below.
 
+As different events have different keys, you can see example schema and key details in the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). If you have any questions, feel free to drop in the [Discord](https://discord.gg/W34XjsSs2H) where a community member would be more than happy to provide support.
+
 #### Kill
 
 ```json
@@ -180,5 +182,3 @@ We use the following hyperparameters:
 - For the Set Transformer, we use one ISAB layer (1 attention head, 16 induced points) as the encoder. For the decoder, we use a Pooling by Multihead Attention block (1 attention head), followed by a linear layer.
 
 The hyperparameters are also available in the [Google Colab](https://colab.research.google.com/drive/1Oqgr4LT3d9pCW4vj4isyR1AfNGtY50sF?usp=sharing), particularly in the second to last block. To see the architecture parameters for DeepSets and Set Transformers, see the `DeepSet()` and `SetTransformer()` functions.
-
-For LightGBM and XGBoost, we use the default Python package parameters with early stopping (10 rounds). Each network is trained for 100 epochs using a batch size of 32, 10 early stopping rounds and 
