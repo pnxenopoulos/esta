@@ -169,4 +169,16 @@ Each parsed JSON contains demo metadata (such as the map, tick rate, what compet
 ```
 
 ## Benchmarks
-We provide benchmarks for win probability prediction using the ESTA data. The benchmarks are available on [Google Colab](https://colab.research.google.com/drive/1Oqgr4LT3d9pCW4vj4isyR1AfNGtY50sF?usp=sharing). In the benchmarks, we compare gradient boosted tree (LightGBM, XGboost) with set learning methods, like Deep Sets and Set Transformers.
+We provide benchmarks for win probability prediction using the ESTA data. The benchmarks are available on [Google Colab](https://colab.research.google.com/drive/1Oqgr4LT3d9pCW4vj4isyR1AfNGtY50sF?usp=sharing). In the benchmarks, we compare gradient boosted trees (LightGBM, XGBoost) with set learning methods, like Deep Sets and Set Transformers.
+
+We use the following hyperparameters:
+- Default parameters provided by the package for LightGBM and XGBoost.
+- 10 early stopping rounds for all models.
+- 100 epochs and a batch size of 32 for DeepSets and Set Transformers.
+- Adam optimizer with a learning rate of 0.001.
+- For DeepSets, we use one linear layer as the encoder and one linear layer for the decoder.
+- For the Set Transformer, we use one ISAB layer (1 attention head, 16 induced points) as the encoder. For the decoder, we use a Pooling by Multihead Attention block (1 attention head), followed by a linear layer.
+
+The hyperparameters are also available in the [Google Colab](https://colab.research.google.com/drive/1Oqgr4LT3d9pCW4vj4isyR1AfNGtY50sF?usp=sharing), particularly in the second to last block. To see the architecture parameters for DeepSets and Set Transformers, see the `DeepSet()` and `SetTransformer()` functions.
+
+For LightGBM and XGBoost, we use the default Python package parameters with early stopping (10 rounds). Each network is trained for 100 epochs using a batch size of 32, 10 early stopping rounds and 
