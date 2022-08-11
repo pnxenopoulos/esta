@@ -9,6 +9,7 @@ Esports Trajectories and Actions (ESTA) is a large dataset of parsed Counter-Str
 - contains spatiotemporal data on player actions (damages, kills, grenade throws, bomb plants/defuses, flashes and weapon fires)
 - contains frames ("game snapshots") parsed at 2 Hz, or 2 frames per in-game second
 - is parsed using the [awpy](https://github.com/pnxenopoulos/awpy) parser
+- is from a well-known tournament according to HLTV (all participants are known to the public. These are _not_ private demos)
 
 To see the structure of the JSON, visit the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). You may also join the awpy [Discord](https://discord.gg/W34XjsSs2H) for more discussion and help with working with CSGO demofiles. If you run into issues with the dataset, feel free to ask on the Discord or open an [issue](https://github.com/pnxenopoulos/esta/issues).
 
@@ -38,7 +39,7 @@ If you want to check out what a parsed demo looks like, we recommend using the G
 ## Example Data
 Each parsed JSON contains demo metadata (such as the map, tick rate, what competition it is from, etc.), parser parameters used from awpy, the game server parameters, and a list of game rounds. In each game round, there exists round metadata (score, end reason, teams, etc.), along with six actions (kills, damages, bomb events, grenade throws, weapon fires and flashes), as well as a list of game frames, which are effectively game snapshots containing player information. We show an example of kill and frame output below.
 
-As different events have different keys, you can see example schema and key details in the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). If you have any questions, feel free to drop in the [Discord](https://discord.gg/W34XjsSs2H) where a community member would be more than happy to provide support.
+To understand the features available in the parsed demos, we recommend visiting the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). As frames and events have different keys, you can see example schema in the awpy documentation. If you have any questions, feel free to drop in the [Discord](https://discord.gg/W34XjsSs2H) where a community member would be more than happy to provide support. Below is an example of the schema for a "Kill" action and a "Frame" (game snapshot).
 
 #### Kill
 
@@ -174,7 +175,8 @@ As different events have different keys, you can see example schema and key deta
 We provide benchmarks for win probability prediction using the ESTA data. The benchmarks are available on [Google Colab](https://colab.research.google.com/drive/1Oqgr4LT3d9pCW4vj4isyR1AfNGtY50sF?usp=sharing). In the benchmarks, we compare gradient boosted trees (LightGBM, XGBoost) with set learning methods, like Deep Sets and Set Transformers.
 
 We use the following hyperparameters:
-- Default parameters provided by the package for LightGBM and XGBoost.
+- Default parameters provided by the corresponding packages for LightGBM and XGBoost.
+- Default parameters for the MLP provided by the sklearn package. We use 0-1 scaling for the features.
 - 10 early stopping rounds for all models.
 - 100 epochs and a batch size of 32 for DeepSets and Set Transformers.
 - Adam optimizer with a learning rate of 0.001.
