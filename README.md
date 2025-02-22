@@ -3,15 +3,13 @@
 [![Discord](https://img.shields.io/discord/868146581419999232?color=blue&label=Discord&logo=discord)](https://discord.gg/W34XjsSs2H) ![GitHub repo size](https://img.shields.io/github/repo-size/pnxenopoulos/esta) ![GitHub demo count](https://img.shields.io/badge/demos-1558-critical) [![awpy](https://img.shields.io/badge/made%20with-awpy-blueviolet)](https://github.com/pnxenopoulos/awpy) [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY%20SA-lightgrey)](https://creativecommons.org/licenses/by-sa/4.0/) [![DOI](https://zenodo.org/badge/495219448.svg)](https://zenodo.org/badge/latestdoi/495219448)
 
 
-Esports Trajectories and Actions (ESTA) is a large dataset of parsed Counter-Strike: Global Offensive (CSGO) demos which contain rich player action and location information. Each parsed demo:
+Esports Trajectories and Actions (ESTA) is a large dataset of parsed Counter-Strike: Global Offensive (CSGO) demos which contains rich player action and location information. Each parsed demo:
 
 - is a JSON compressed in `.xz` format, and is roughly 1-3 MB compressed/25-75 MB decompressed
 - contains spatiotemporal data on player actions (damages, kills, grenade throws, bomb plants/defuses, flashes and weapon fires)
 - contains frames ("game snapshots") parsed at 2 Hz, or 2 frames per in-game second
 - is parsed using the [awpy](https://github.com/pnxenopoulos/awpy) parser
 - is from a well-known tournament according to HLTV (all participants are known to the public. These are _not_ private demos)
-
-To see the structure of the JSON, visit the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). You may also join the awpy [Discord](https://discord.gg/W34XjsSs2H) for more discussion and help with working with CSGO demofiles. If you run into issues with the dataset, feel free to ask on the Discord or open an [issue](https://github.com/pnxenopoulos/esta/issues).
 
 The ESTA dataset is comprised of the "Online" (`data/online/`) and the "LAN" (`data/lan/`) subsets. "Online" contains 878 demos from top Online tournaments between January 2021 and May 2022. "Lan" contains 680 demos from top LAN tournaments between July 2021 and May 2022. The list of matches for each was compiled using [HLTV.org](https://www.hltv.org/). Visit HLTV to access a comprehensive list of tournaments and matches, along with their corresponding statistics and demos.
 
@@ -30,16 +28,17 @@ You can decompress a parsed demo by running
 
 ```xz --decompress demo-to-open.xz```
 
-You can install awpy (requires Golang >= 1.17) through pip by running 
+> [!WARNING]
+> ESTA data is only compatible with Awpy version 1.x -- current versions of Awpy 2.x and above are _not_ compatible!
 
-```pip install awpy```
+You can install Awpy 1.3.1 (requires Golang >= 1.17) through pip by running 
+
+```pip install awpy==1.3.1```
 
 If you want to check out what a parsed demo looks like, we recommend using the GitHub web interface to locate an example `.xz`, rather than cloning the whole repository, which is a few GB.
 
 ## Example Data
 Each parsed JSON contains demo metadata (such as the map, tick rate, what competition it is from, etc.), parser parameters used from awpy, the game server parameters, and a list of game rounds. In each game round, there exists round metadata (score, end reason, teams, etc.), along with six actions (kills, damages, bomb events, grenade throws, weapon fires and flashes), as well as a list of game frames, which are effectively game snapshots containing player information. We show an example of kill and frame output below.
-
-To understand the features available in the parsed demos, we recommend visiting the [awpy documentation](https://awpy.readthedocs.io/en/latest/parser_output.html). As frames and events have different keys, you can see example schema in the awpy documentation. If you have any questions, feel free to drop in the [Discord](https://discord.gg/W34XjsSs2H) where a community member would be more than happy to provide support. Below is an example of the schema for a "Kill" action and a "Frame" (game snapshot).
 
 #### Kill
 
